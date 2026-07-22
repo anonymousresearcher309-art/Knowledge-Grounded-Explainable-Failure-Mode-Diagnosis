@@ -1,0 +1,39 @@
+{
+  "stage_name": "empirical",
+  "description": "Empirical reference graphs.",
+  "reference_graph_policy": "empirical",
+  "hybrid_alpha": 1.0,
+  "split_strategy": "ambiguity_focused",
+  "reference_pool": "prototype_construction_plus_validation",
+  "split_counts": {
+    "prototype_construction": {
+      "Normal": 5790,
+      "HDF": 64,
+      "OSF": 47,
+      "PWF_high": 38,
+      "TWF": 25,
+      "PWF_low": 19
+    },
+    "validation": {
+      "Normal": 1931,
+      "HDF": 21,
+      "OSF": 15,
+      "PWF_high": 13,
+      "TWF": 8,
+      "PWF_low": 6
+    },
+    "test": {
+      "Normal": 1931,
+      "HDF": 21,
+      "OSF": 16,
+      "PWF_high": 13,
+      "TWF": 9,
+      "PWF_low": 6
+    },
+    "stress_test": {
+      "Multi": 24,
+      "RNF": 18
+    }
+  },
+  "output_root": "outputs/ai4i_benchmark/empirical"
+}

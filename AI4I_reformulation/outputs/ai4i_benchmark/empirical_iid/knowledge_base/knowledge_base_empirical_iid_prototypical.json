@@ -1,0 +1,1155 @@
+{
+  "knowledge_base_name": "knowledge_base_empirical_iid_prototypical",
+  "machine_info": {
+    "stage_name": "empirical_iid",
+    "description": "Empirical reference graphs with iid validation/test holdout for split comparison.",
+    "reference_graph_policy": "empirical",
+    "hybrid_alpha": 1.0,
+    "run_group": "ai4i_graph_gen_base",
+    "sensor_order": [
+      "thermal_risk",
+      "low_speed_risk",
+      "low_power_risk",
+      "high_power_risk",
+      "wear_risk",
+      "overstrain_risk"
+    ],
+    "state_order": [
+      "safe",
+      "caution",
+      "warning",
+      "danger"
+    ],
+    "mode_order": [
+      "Normal",
+      "HDF",
+      "TWF",
+      "OSF",
+      "PWF_low",
+      "PWF_high"
+    ],
+    "mode_relevant_sensors": {
+      "Normal": [
+        "thermal_risk",
+        "low_speed_risk",
+        "low_power_risk",
+        "high_power_risk",
+        "wear_risk",
+        "overstrain_risk"
+      ],
+      "HDF": [
+        "thermal_risk",
+        "low_speed_risk"
+      ],
+      "TWF": [
+        "wear_risk",
+        "overstrain_risk"
+      ],
+      "OSF": [
+        "overstrain_risk",
+        "wear_risk"
+      ],
+      "PWF_low": [
+        "low_power_risk"
+      ],
+      "PWF_high": [
+        "high_power_risk"
+      ]
+    },
+    "risk_scale": {
+      "thermal_risk": 2.6,
+      "low_speed_risk": 190.0,
+      "low_power_risk": 1600.0,
+      "high_power_risk": 2200.0,
+      "wear_risk": 55.0,
+      "overstrain_risk": 2600.0
+    },
+    "sensor_state_centers": {
+      "thermal_risk": [
+        0.0,
+        0.26,
+        0.56,
+        0.86
+      ],
+      "low_speed_risk": [
+        0.0,
+        0.28,
+        0.58,
+        0.88
+      ],
+      "low_power_risk": [
+        0.0,
+        0.12,
+        0.3,
+        0.6
+      ],
+      "high_power_risk": [
+        0.0,
+        0.12,
+        0.3,
+        0.6
+      ],
+      "wear_risk": [
+        0.0,
+        0.3,
+        0.58,
+        0.86
+      ],
+      "overstrain_risk": [
+        0.0,
+        0.2,
+        0.42,
+        0.72
+      ]
+    },
+    "sensor_state_width": {
+      "thermal_risk": 0.36,
+      "low_speed_risk": 0.36,
+      "low_power_risk": 0.24,
+      "high_power_risk": 0.24,
+      "wear_risk": 0.3,
+      "overstrain_risk": 0.26
+    },
+    "split": {
+      "train_frac": 0.6,
+      "test_frac_within_holdout": 0.5,
+      "random_state": 42,
+      "strategy": "iid_holdout",
+      "ambiguity_sort_desc": false
+    }
+  },
+  "split_counts": {
+    "prototype_construction": {
+      "Normal": 5790,
+      "HDF": 64,
+      "OSF": 47,
+      "PWF_high": 38,
+      "TWF": 25,
+      "PWF_low": 19
+    },
+    "validation": {
+      "Normal": 1931,
+      "HDF": 21,
+      "OSF": 15,
+      "PWF_high": 13,
+      "TWF": 9,
+      "PWF_low": 6
+    },
+    "test": {
+      "Normal": 1931,
+      "HDF": 21,
+      "OSF": 16,
+      "PWF_high": 13,
+      "TWF": 8,
+      "PWF_low": 6
+    },
+    "stress_test": {
+      "Multi": 24,
+      "RNF": 18
+    }
+  },
+  "failure_modes": [
+    {
+      "mode": "Normal",
+      "nodes": [
+        {
+          "id": "thermal_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "low_speed_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "low_power_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "high_power_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "wear_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "overstrain_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "safe",
+          "type": "State"
+        },
+        {
+          "id": "caution",
+          "type": "State"
+        },
+        {
+          "id": "warning",
+          "type": "State"
+        },
+        {
+          "id": "danger",
+          "type": "State"
+        }
+      ],
+      "edges": [
+        {
+          "source": "thermal_risk",
+          "target": "safe",
+          "probability": 0.7599
+        },
+        {
+          "source": "thermal_risk",
+          "target": "caution",
+          "probability": 0.2358
+        },
+        {
+          "source": "thermal_risk",
+          "target": "warning",
+          "probability": 0.0043
+        },
+        {
+          "source": "thermal_risk",
+          "target": "danger",
+          "probability": 0.0
+        },
+        {
+          "source": "low_speed_risk",
+          "target": "safe",
+          "probability": 0.7668
+        },
+        {
+          "source": "low_speed_risk",
+          "target": "caution",
+          "probability": 0.2136
+        },
+        {
+          "source": "low_speed_risk",
+          "target": "warning",
+          "probability": 0.0162
+        },
+        {
+          "source": "low_speed_risk",
+          "target": "danger",
+          "probability": 0.0034
+        },
+        {
+          "source": "low_power_risk",
+          "target": "safe",
+          "probability": 0.6667
+        },
+        {
+          "source": "low_power_risk",
+          "target": "caution",
+          "probability": 0.3333
+        },
+        {
+          "source": "low_power_risk",
+          "target": "warning",
+          "probability": 0.0
+        },
+        {
+          "source": "low_power_risk",
+          "target": "danger",
+          "probability": 0.0
+        },
+        {
+          "source": "high_power_risk",
+          "target": "safe",
+          "probability": 0.6667
+        },
+        {
+          "source": "high_power_risk",
+          "target": "caution",
+          "probability": 0.3333
+        },
+        {
+          "source": "high_power_risk",
+          "target": "warning",
+          "probability": 0.0
+        },
+        {
+          "source": "high_power_risk",
+          "target": "danger",
+          "probability": 0.0
+        },
+        {
+          "source": "wear_risk",
+          "target": "safe",
+          "probability": 0.9617
+        },
+        {
+          "source": "wear_risk",
+          "target": "caution",
+          "probability": 0.0309
+        },
+        {
+          "source": "wear_risk",
+          "target": "warning",
+          "probability": 0.0065
+        },
+        {
+          "source": "wear_risk",
+          "target": "danger",
+          "probability": 0.0009
+        },
+        {
+          "source": "overstrain_risk",
+          "target": "safe",
+          "probability": 0.8125
+        },
+        {
+          "source": "overstrain_risk",
+          "target": "caution",
+          "probability": 0.1875
+        },
+        {
+          "source": "overstrain_risk",
+          "target": "warning",
+          "probability": 0.0
+        },
+        {
+          "source": "overstrain_risk",
+          "target": "danger",
+          "probability": 0.0
+        }
+      ]
+    },
+    {
+      "mode": "HDF",
+      "nodes": [
+        {
+          "id": "thermal_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "low_speed_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "low_power_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "high_power_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "wear_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "overstrain_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "safe",
+          "type": "State"
+        },
+        {
+          "id": "caution",
+          "type": "State"
+        },
+        {
+          "id": "warning",
+          "type": "State"
+        },
+        {
+          "id": "danger",
+          "type": "State"
+        }
+      ],
+      "edges": [
+        {
+          "source": "thermal_risk",
+          "target": "safe",
+          "probability": 0.4907
+        },
+        {
+          "source": "thermal_risk",
+          "target": "caution",
+          "probability": 0.4618
+        },
+        {
+          "source": "thermal_risk",
+          "target": "warning",
+          "probability": 0.0475
+        },
+        {
+          "source": "thermal_risk",
+          "target": "danger",
+          "probability": 0.0
+        },
+        {
+          "source": "low_speed_risk",
+          "target": "safe",
+          "probability": 0.3737
+        },
+        {
+          "source": "low_speed_risk",
+          "target": "caution",
+          "probability": 0.484
+        },
+        {
+          "source": "low_speed_risk",
+          "target": "warning",
+          "probability": 0.1191
+        },
+        {
+          "source": "low_speed_risk",
+          "target": "danger",
+          "probability": 0.0232
+        },
+        {
+          "source": "low_power_risk",
+          "target": "safe",
+          "probability": 0.6667
+        },
+        {
+          "source": "low_power_risk",
+          "target": "caution",
+          "probability": 0.3333
+        },
+        {
+          "source": "low_power_risk",
+          "target": "warning",
+          "probability": 0.0
+        },
+        {
+          "source": "low_power_risk",
+          "target": "danger",
+          "probability": 0.0
+        },
+        {
+          "source": "high_power_risk",
+          "target": "safe",
+          "probability": 0.6667
+        },
+        {
+          "source": "high_power_risk",
+          "target": "caution",
+          "probability": 0.3333
+        },
+        {
+          "source": "high_power_risk",
+          "target": "warning",
+          "probability": 0.0
+        },
+        {
+          "source": "high_power_risk",
+          "target": "danger",
+          "probability": 0.0
+        },
+        {
+          "source": "wear_risk",
+          "target": "safe",
+          "probability": 0.959
+        },
+        {
+          "source": "wear_risk",
+          "target": "caution",
+          "probability": 0.0386
+        },
+        {
+          "source": "wear_risk",
+          "target": "warning",
+          "probability": 0.0024
+        },
+        {
+          "source": "wear_risk",
+          "target": "danger",
+          "probability": 0.0
+        },
+        {
+          "source": "overstrain_risk",
+          "target": "safe",
+          "probability": 0.8125
+        },
+        {
+          "source": "overstrain_risk",
+          "target": "caution",
+          "probability": 0.1875
+        },
+        {
+          "source": "overstrain_risk",
+          "target": "warning",
+          "probability": 0.0
+        },
+        {
+          "source": "overstrain_risk",
+          "target": "danger",
+          "probability": 0.0
+        }
+      ]
+    },
+    {
+      "mode": "TWF",
+      "nodes": [
+        {
+          "id": "thermal_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "low_speed_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "low_power_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "high_power_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "wear_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "overstrain_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "safe",
+          "type": "State"
+        },
+        {
+          "id": "caution",
+          "type": "State"
+        },
+        {
+          "id": "warning",
+          "type": "State"
+        },
+        {
+          "id": "danger",
+          "type": "State"
+        }
+      ],
+      "edges": [
+        {
+          "source": "thermal_risk",
+          "target": "safe",
+          "probability": 0.7525
+        },
+        {
+          "source": "thermal_risk",
+          "target": "caution",
+          "probability": 0.2435
+        },
+        {
+          "source": "thermal_risk",
+          "target": "warning",
+          "probability": 0.004
+        },
+        {
+          "source": "thermal_risk",
+          "target": "danger",
+          "probability": 0.0
+        },
+        {
+          "source": "low_speed_risk",
+          "target": "safe",
+          "probability": 0.7978
+        },
+        {
+          "source": "low_speed_risk",
+          "target": "caution",
+          "probability": 0.1973
+        },
+        {
+          "source": "low_speed_risk",
+          "target": "warning",
+          "probability": 0.0049
+        },
+        {
+          "source": "low_speed_risk",
+          "target": "danger",
+          "probability": 0.0
+        },
+        {
+          "source": "low_power_risk",
+          "target": "safe",
+          "probability": 0.6667
+        },
+        {
+          "source": "low_power_risk",
+          "target": "caution",
+          "probability": 0.3333
+        },
+        {
+          "source": "low_power_risk",
+          "target": "warning",
+          "probability": 0.0
+        },
+        {
+          "source": "low_power_risk",
+          "target": "danger",
+          "probability": 0.0
+        },
+        {
+          "source": "high_power_risk",
+          "target": "safe",
+          "probability": 0.6667
+        },
+        {
+          "source": "high_power_risk",
+          "target": "caution",
+          "probability": 0.3333
+        },
+        {
+          "source": "high_power_risk",
+          "target": "warning",
+          "probability": 0.0
+        },
+        {
+          "source": "high_power_risk",
+          "target": "danger",
+          "probability": 0.0
+        },
+        {
+          "source": "wear_risk",
+          "target": "safe",
+          "probability": 0.2522
+        },
+        {
+          "source": "wear_risk",
+          "target": "caution",
+          "probability": 0.4455
+        },
+        {
+          "source": "wear_risk",
+          "target": "warning",
+          "probability": 0.2536
+        },
+        {
+          "source": "wear_risk",
+          "target": "danger",
+          "probability": 0.0487
+        },
+        {
+          "source": "overstrain_risk",
+          "target": "safe",
+          "probability": 0.8125
+        },
+        {
+          "source": "overstrain_risk",
+          "target": "caution",
+          "probability": 0.1875
+        },
+        {
+          "source": "overstrain_risk",
+          "target": "warning",
+          "probability": 0.0
+        },
+        {
+          "source": "overstrain_risk",
+          "target": "danger",
+          "probability": 0.0
+        }
+      ]
+    },
+    {
+      "mode": "OSF",
+      "nodes": [
+        {
+          "id": "thermal_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "low_speed_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "low_power_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "high_power_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "wear_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "overstrain_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "safe",
+          "type": "State"
+        },
+        {
+          "id": "caution",
+          "type": "State"
+        },
+        {
+          "id": "warning",
+          "type": "State"
+        },
+        {
+          "id": "danger",
+          "type": "State"
+        }
+      ],
+      "edges": [
+        {
+          "source": "thermal_risk",
+          "target": "safe",
+          "probability": 0.7799
+        },
+        {
+          "source": "thermal_risk",
+          "target": "caution",
+          "probability": 0.2201
+        },
+        {
+          "source": "thermal_risk",
+          "target": "warning",
+          "probability": 0.0
+        },
+        {
+          "source": "thermal_risk",
+          "target": "danger",
+          "probability": 0.0
+        },
+        {
+          "source": "low_speed_risk",
+          "target": "safe",
+          "probability": 0.4748
+        },
+        {
+          "source": "low_speed_risk",
+          "target": "caution",
+          "probability": 0.3297
+        },
+        {
+          "source": "low_speed_risk",
+          "target": "warning",
+          "probability": 0.1381
+        },
+        {
+          "source": "low_speed_risk",
+          "target": "danger",
+          "probability": 0.0575
+        },
+        {
+          "source": "low_power_risk",
+          "target": "safe",
+          "probability": 0.6667
+        },
+        {
+          "source": "low_power_risk",
+          "target": "caution",
+          "probability": 0.3333
+        },
+        {
+          "source": "low_power_risk",
+          "target": "warning",
+          "probability": 0.0
+        },
+        {
+          "source": "low_power_risk",
+          "target": "danger",
+          "probability": 0.0
+        },
+        {
+          "source": "high_power_risk",
+          "target": "safe",
+          "probability": 0.6667
+        },
+        {
+          "source": "high_power_risk",
+          "target": "caution",
+          "probability": 0.3333
+        },
+        {
+          "source": "high_power_risk",
+          "target": "warning",
+          "probability": 0.0
+        },
+        {
+          "source": "high_power_risk",
+          "target": "danger",
+          "probability": 0.0
+        },
+        {
+          "source": "wear_risk",
+          "target": "safe",
+          "probability": 0.5293
+        },
+        {
+          "source": "wear_risk",
+          "target": "caution",
+          "probability": 0.3544
+        },
+        {
+          "source": "wear_risk",
+          "target": "warning",
+          "probability": 0.0954
+        },
+        {
+          "source": "wear_risk",
+          "target": "danger",
+          "probability": 0.0209
+        },
+        {
+          "source": "overstrain_risk",
+          "target": "safe",
+          "probability": 0.2773
+        },
+        {
+          "source": "overstrain_risk",
+          "target": "caution",
+          "probability": 0.3682
+        },
+        {
+          "source": "overstrain_risk",
+          "target": "warning",
+          "probability": 0.2064
+        },
+        {
+          "source": "overstrain_risk",
+          "target": "danger",
+          "probability": 0.148
+        }
+      ]
+    },
+    {
+      "mode": "PWF_low",
+      "nodes": [
+        {
+          "id": "thermal_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "low_speed_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "low_power_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "high_power_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "wear_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "overstrain_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "safe",
+          "type": "State"
+        },
+        {
+          "id": "caution",
+          "type": "State"
+        },
+        {
+          "id": "warning",
+          "type": "State"
+        },
+        {
+          "id": "danger",
+          "type": "State"
+        }
+      ],
+      "edges": [
+        {
+          "source": "thermal_risk",
+          "target": "safe",
+          "probability": 0.7659
+        },
+        {
+          "source": "thermal_risk",
+          "target": "caution",
+          "probability": 0.2341
+        },
+        {
+          "source": "thermal_risk",
+          "target": "warning",
+          "probability": 0.0
+        },
+        {
+          "source": "thermal_risk",
+          "target": "danger",
+          "probability": 0.0
+        },
+        {
+          "source": "low_speed_risk",
+          "target": "safe",
+          "probability": 0.8182
+        },
+        {
+          "source": "low_speed_risk",
+          "target": "caution",
+          "probability": 0.1818
+        },
+        {
+          "source": "low_speed_risk",
+          "target": "warning",
+          "probability": 0.0
+        },
+        {
+          "source": "low_speed_risk",
+          "target": "danger",
+          "probability": 0.0
+        },
+        {
+          "source": "low_power_risk",
+          "target": "safe",
+          "probability": 0.2016
+        },
+        {
+          "source": "low_power_risk",
+          "target": "caution",
+          "probability": 0.2679
+        },
+        {
+          "source": "low_power_risk",
+          "target": "warning",
+          "probability": 0.1444
+        },
+        {
+          "source": "low_power_risk",
+          "target": "danger",
+          "probability": 0.3862
+        },
+        {
+          "source": "high_power_risk",
+          "target": "safe",
+          "probability": 0.6667
+        },
+        {
+          "source": "high_power_risk",
+          "target": "caution",
+          "probability": 0.3333
+        },
+        {
+          "source": "high_power_risk",
+          "target": "warning",
+          "probability": 0.0
+        },
+        {
+          "source": "high_power_risk",
+          "target": "danger",
+          "probability": 0.0
+        },
+        {
+          "source": "wear_risk",
+          "target": "safe",
+          "probability": 0.9321
+        },
+        {
+          "source": "wear_risk",
+          "target": "caution",
+          "probability": 0.0679
+        },
+        {
+          "source": "wear_risk",
+          "target": "warning",
+          "probability": 0.0
+        },
+        {
+          "source": "wear_risk",
+          "target": "danger",
+          "probability": 0.0
+        },
+        {
+          "source": "overstrain_risk",
+          "target": "safe",
+          "probability": 0.8125
+        },
+        {
+          "source": "overstrain_risk",
+          "target": "caution",
+          "probability": 0.1875
+        },
+        {
+          "source": "overstrain_risk",
+          "target": "warning",
+          "probability": 0.0
+        },
+        {
+          "source": "overstrain_risk",
+          "target": "danger",
+          "probability": 0.0
+        }
+      ]
+    },
+    {
+      "mode": "PWF_high",
+      "nodes": [
+        {
+          "id": "thermal_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "low_speed_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "low_power_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "high_power_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "wear_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "overstrain_risk",
+          "type": "Sensor"
+        },
+        {
+          "id": "safe",
+          "type": "State"
+        },
+        {
+          "id": "caution",
+          "type": "State"
+        },
+        {
+          "id": "warning",
+          "type": "State"
+        },
+        {
+          "id": "danger",
+          "type": "State"
+        }
+      ],
+      "edges": [
+        {
+          "source": "thermal_risk",
+          "target": "safe",
+          "probability": 0.758
+        },
+        {
+          "source": "thermal_risk",
+          "target": "caution",
+          "probability": 0.2376
+        },
+        {
+          "source": "thermal_risk",
+          "target": "warning",
+          "probability": 0.0045
+        },
+        {
+          "source": "thermal_risk",
+          "target": "danger",
+          "probability": 0.0
+        },
+        {
+          "source": "low_speed_risk",
+          "target": "safe",
+          "probability": 0.3337
+        },
+        {
+          "source": "low_speed_risk",
+          "target": "caution",
+          "probability": 0.339
+        },
+        {
+          "source": "low_speed_risk",
+          "target": "warning",
+          "probability": 0.2639
+        },
+        {
+          "source": "low_speed_risk",
+          "target": "danger",
+          "probability": 0.0633
+        },
+        {
+          "source": "low_power_risk",
+          "target": "safe",
+          "probability": 0.6667
+        },
+        {
+          "source": "low_power_risk",
+          "target": "caution",
+          "probability": 0.3333
+        },
+        {
+          "source": "low_power_risk",
+          "target": "warning",
+          "probability": 0.0
+        },
+        {
+          "source": "low_power_risk",
+          "target": "danger",
+          "probability": 0.0
+        },
+        {
+          "source": "high_power_risk",
+          "target": "safe",
+          "probability": 0.2778
+        },
+        {
+          "source": "high_power_risk",
+          "target": "caution",
+          "probability": 0.3937
+        },
+        {
+          "source": "high_power_risk",
+          "target": "warning",
+          "probability": 0.2453
+        },
+        {
+          "source": "high_power_risk",
+          "target": "danger",
+          "probability": 0.0832
+        },
+        {
+          "source": "wear_risk",
+          "target": "safe",
+          "probability": 0.9602
+        },
+        {
+          "source": "wear_risk",
+          "target": "caution",
+          "probability": 0.0202
+        },
+        {
+          "source": "wear_risk",
+          "target": "warning",
+          "probability": 0.016
+        },
+        {
+          "source": "wear_risk",
+          "target": "danger",
+          "probability": 0.0036
+        },
+        {
+          "source": "overstrain_risk",
+          "target": "safe",
+          "probability": 0.6577
+        },
+        {
+          "source": "overstrain_risk",
+          "target": "caution",
+          "probability": 0.1901
+        },
+        {
+          "source": "overstrain_risk",
+          "target": "warning",
+          "probability": 0.0225
+        },
+        {
+          "source": "overstrain_risk",
+          "target": "danger",
+          "probability": 0.1297
+        }
+      ]
+    }
+  ]
+}

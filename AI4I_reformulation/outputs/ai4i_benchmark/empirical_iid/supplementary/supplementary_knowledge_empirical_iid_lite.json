@@ -1,0 +1,10 @@
+{
+  "knowledge_base_name": "supplementary_knowledge_empirical_iid_lite",
+  "machine_info": {
+    "system_name": "empirical_iid",
+    "description": "Empirical reference graphs with iid validation/test holdout for split comparison."
+  },
+  "notes": [
+    "Compact placeholder supplementary payload."
+  ]
+}
