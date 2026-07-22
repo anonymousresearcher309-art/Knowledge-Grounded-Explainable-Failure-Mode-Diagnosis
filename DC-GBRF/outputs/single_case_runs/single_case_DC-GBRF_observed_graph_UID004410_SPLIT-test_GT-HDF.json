@@ -1,0 +1,172 @@
+{
+  "run_timestamp": "2026-07-21T17:02:03.698638",
+  "run_root": "C:\\Users\\c0852\\Desktop\\workspace\\ExplainableFaultDiagnosis_KGBI_with_LLM\\PublicCode\\AI4I_reformulation\\outputs\\ai4i_benchmark\\hybrid_0.4",
+  "stage_name": "hybrid_0.4",
+  "test_case_path": "C:\\Users\\c0852\\Desktop\\workspace\\ExplainableFaultDiagnosis_KGBI_with_LLM\\PublicCode\\AI4I_reformulation\\outputs\\ai4i_benchmark\\hybrid_0.4\\graphs\\test\\observed_graph_UID004410_SPLIT-test_GT-HDF.json",
+  "file_name": "observed_graph_UID004410_SPLIT-test_GT-HDF.json",
+  "gt_mode": "HDF",
+  "method_name": "DC-GBRF",
+  "llm_name": "GPT-5-mini",
+  "llm_build_name": "gpt-5-mini",
+  "supplementary_variant": "lite",
+  "alpha_dk": 0.2,
+  "prompt_version": "obs1_v4_pairwise_fault_signature_contrast",
+  "observed_summary_version": "obs1_v1",
+  "prompt_key": "dc_fusion",
+  "observed_evidence_summary": "- wear_risk -> safe: 1.000\n- overstrain_risk -> safe: 0.812\n- low_power_risk -> safe: 0.667\n- high_power_risk -> safe: 0.667",
+  "candidate_context": "## Candidate 1: HDF\n- alpha_dk: 0.20\n- rrf_score_base: 0.356061\n- neighbor_support: 0.159089\n- rrf_score_dk: 0.316666\n\n{\n  \"mode\": \"HDF\",\n  \"nodes\": [\n    {\n      \"id\": \"thermal_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"low_speed_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"low_power_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"high_power_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"wear_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"overstrain_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"safe\",\n      \"type\": \"State\"\n    },\n    {\n      \"id\": \"caution\",\n      \"type\": \"State\"\n    },\n    {\n      \"id\": \"warning\",\n      \"type\": \"State\"\n    },\n    {\n      \"id\": \"danger\",\n      \"type\": \"State\"\n    }\n  ],\n  \"edges\": [\n    {\n      \"source\": \"thermal_risk\",\n      \"target\": \"safe\",\n      \"probability\": 0.2098\n    },\n    {\n      \"source\": \"thermal_risk\",\n      \"target\": \"caution\",\n      \"probability\": 0.2647\n    },\n    {\n      \"source\": \"thermal_risk\",\n      \"target\": \"warning\",\n      \"probability\": 0.5255\n    },\n    {\n      \"source\": \"low_speed_risk\",\n      \"target\": \"safe\",\n      \"probability\": 0.1632\n    },\n    {\n      \"source\": \"low_speed_risk\",\n      \"target\": \"caution\",\n      \"probability\": 0.2701\n    },\n    {\n      \"source\": \"low_speed_r\n... (truncated)\n\n## Candidate 2: PWF_high\n- alpha_dk: 0.20\n- rrf_score_base: 0.302198\n- neighbor_support: 0.165808\n- rrf_score_dk: 0.274920\n\n{\n  \"mode\": \"PWF_high\",\n  \"nodes\": [\n    {\n      \"id\": \"thermal_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"low_speed_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"low_power_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"high_power_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"wear_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"overstrain_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"safe\",\n      \"type\": \"State\"\n    },\n    {\n      \"id\": \"caution\",\n      \"type\": \"State\"\n    },\n    {\n      \"id\": \"warning\",\n      \"type\": \"State\"\n    },\n    {\n      \"id\": \"danger\",\n      \"type\": \"State\"\n    }\n  ],\n  \"edges\": [\n    {\n      \"source\": \"thermal_risk\",\n      \"target\": \"safe\",\n      \"probability\": 1.0\n    },\n    {\n      \"source\": \"low_speed_risk\",\n      \"target\": \"safe\",\n      \"probability\": 1.0\n    },\n    {\n      \"source\": \"low_power_risk\",\n      \"target\": \"safe\",\n      \"probability\": 1.0\n    },\n    {\n      \"source\": \"high_power_risk\",\n      \"target\": \"safe\",\n      \"probability\": 0.1192\n    },\n    {\n      \"source\": \"high_power_risk\",\n      \"target\": \"caution\",\n      \"probability\": 0.1476\n    },\n    {\n      \"source\": \"high_power_risk\n... (truncated)\n\n## Candidate 3: Normal\n- alpha_dk: 0.20\n- rrf_score_base: 0.340909\n- neighbor_support: 0.000000\n- rrf_score_dk: 0.272727\n\n{\n  \"mode\": \"Normal\",\n  \"nodes\": [\n    {\n      \"id\": \"thermal_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"low_speed_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"low_power_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"high_power_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"wear_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"overstrain_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"safe\",\n      \"type\": \"State\"\n    },\n    {\n      \"id\": \"caution\",\n      \"type\": \"State\"\n    },\n    {\n      \"id\": \"warning\",\n      \"type\": \"State\"\n    },\n    {\n      \"id\": \"danger\",\n      \"type\": \"State\"\n    }\n  ],\n  \"edges\": [\n    {\n      \"source\": \"thermal_risk\",\n      \"target\": \"safe\",\n      \"probability\": 0.906\n    },\n    {\n      \"source\": \"thermal_risk\",\n      \"target\": \"caution\",\n      \"probability\": 0.0927\n    },\n    {\n      \"source\": \"thermal_risk\",\n      \"target\": \"warning\",\n      \"probability\": 0.0013\n    },\n    {\n      \"source\": \"low_speed_risk\",\n      \"target\": \"safe\",\n      \"probability\": 0.9118\n    },\n    {\n      \"source\": \"low_speed_risk\",\n      \"target\": \"caution\",\n      \"probability\": 0.0821\n    },\n    {\n      \"source\": \"low_speed\n... (truncated)",
+  "supplementary_context": "## Supplementary 1: C:\\Users\\c0852\\Desktop\\workspace\\ExplainableFaultDiagnosis_KGBI_with_LLM\\20260528\\OpenData\\outputs\\ai4i_paper_v5\\ref_graph_gen_ai4i_main_v5__hybrid_0.4\\supplementary\\supplementary_knowledge_ref_graph_gen_ai4i_main_v5__hybrid_0.4_lite.json\n{\n  \"knowledge_base_name\": \"ref_graph_gen_ai4i_main_v5__hybrid_0.4_supplementary_lite\",\n  \"machine_info\": {\n    \"system_name\": \"ref_graph_gen_ai4i_main_v5__hybrid_0.4\",\n    \"description\": \"Compact supplementary knowledge for ref_graph_gen_ai4i_main_v5__hybrid_0.4.\"\n  }\n}",
+  "raw_answer": "",
+  "structured_parse": {
+    "initial_top_candidate_mode": null,
+    "final_most_likely_failure_mode": null,
+    "alternative_candidate_mode": null,
+    "confidence": null,
+    "retrieval_summary": null,
+    "supplementary_summary": null,
+    "key_evidence": null,
+    "why_final_over_alternative": null,
+    "llm_top2_modes": [],
+    "fallback_mode_mentions": []
+  },
+  "final_most_likely_failure_mode": null,
+  "initial_top_candidate": null,
+  "alternative_candidate": null,
+  "retrieval_ranked_modes": [
+    "HDF",
+    "PWF_high",
+    "Normal",
+    "PWF_low"
+  ],
+  "llm_ranked_modes": [],
+  "retrieval_rr": 1.0,
+  "llm_rr": NaN,
+  "input_tokens": 2301,
+  "output_tokens": 700,
+  "total_tokens": 3001,
+  "response_metadata": {
+    "token_usage": {
+      "completion_tokens": 700,
+      "prompt_tokens": 2301,
+      "total_tokens": 3001,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 700,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 2176
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 10,
+        "engine_ttft_ms": 30,
+        "engine_ttlt_ms": 7332,
+        "pre_inference_ms": 233,
+        "service_tbt_ms": 10,
+        "service_ttft_ms": 669,
+        "service_ttlt_ms": 7964,
+        "total_duration_ms": 7741,
+        "user_visible_ttft_ms": 436
+      }
+    },
+    "model_name": "gpt-5-mini-2025-08-07",
+    "system_fingerprint": null,
+    "id": "chatcmpl-E3ziFQlNTYxRPxJWTy8Rbk0mmyGX1",
+    "service_tier": "default",
+    "prompt_filter_results": [
+      {
+        "prompt_index": 0,
+        "content_filter_results": {
+          "hate": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "jailbreak": {
+            "detected": false,
+            "filtered": false
+          },
+          "self_harm": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "sexual": {
+            "filtered": false,
+            "severity": "safe"
+          },
+          "violence": {
+            "filtered": false,
+            "severity": "safe"
+          }
+        }
+      }
+    ],
+    "finish_reason": "length",
+    "logprobs": null,
+    "content_filter_results": {}
+  },
+  "human_input": "# Observed Graph\n{\n  \"mode\": \"HDF\",\n  \"nodes\": [\n    {\n      \"id\": \"thermal_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"low_speed_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"low_power_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"high_power_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"wear_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"overstrain_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"safe\",\n      \"type\": \"State\"\n    },\n    {\n      \"id\": \"caution\",\n      \"type\": \"State\"\n    },\n    {\n      \"id\": \"warning\",\n      \"type\": \"State\"\n    },\n    {\n      \"id\": \"danger\",\n      \"type\": \"State\"\n    }\n  ],\n  \"edges\": [\n    {\n      \"source\": \"thermal_risk\",\n      \"target\": \"safe\",\n      \"probability\": 0.0319\n    },\n    {\n      \"source\": \"thermal_risk\",\n      \"target\": \"caution\",\n      \"probability\": 0.6312\n    },\n    {\n      \"source\": \"thermal_risk\",\n      \"target\": \"warning\",\n      \"probability\": 0.3369\n    },\n    {\n      \"source\": \"low_speed_risk\",\n      \"target\": \"safe\",\n      \"probability\": 0.555\n    },\n    {\n      \"source\": \"low_speed_risk\",\n      \"target\": \"caution\",\n      \"probability\": 0.445\n    },\n    {\n      \"source\": \"low_power_risk\",\n      \"target\": \"safe\",\n      \"probability\": 0.6667\n    },\n    {\n      \"source\": \"low_power_risk\",\n      \"target\": \"caution\",\n      \"probability\": 0.3333\n    },\n    {\n      \"source\": \"high_power_risk\",\n      \"target\": \"safe\",\n      \"probability\": 0.6667\n    },\n    {\n      \"source\": \"high_power_risk\",\n      \"target\": \"caution\",\n      \"probability\": 0.3333\n    },\n    {\n      \"source\": \"wear_risk\",\n      \"target\": \"safe\",\n      \"probability\": 1.0\n    },\n    {\n      \"source\": \"overstrain_risk\",\n      \"target\": \"safe\",\n      \"probability\": 0.8125\n    },\n    {\n      \"source\": \"overstrain_risk\",\n      \"target\": \"caution\",\n      \"probability\": 0.1875\n    }\n  ]\n}\n\n# Observed Evidence Summary\n- wear_risk -> safe: 1.000\n- overstrain_risk -> safe: 0.812\n- low_power_risk -> safe: 0.667\n- high_power_risk -> safe: 0.667\n\n# Retrieval Method\nDC-GBRF\n\n# Domain Calibration Alpha\n0.20\n\n# Compact Candidate Context\n## Candidate 1: HDF\n- alpha_dk: 0.20\n- rrf_score_base: 0.356061\n- neighbor_support: 0.159089\n- rrf_score_dk: 0.316666\n\n{\n  \"mode\": \"HDF\",\n  \"nodes\": [\n    {\n      \"id\": \"thermal_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"low_speed_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"low_power_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"high_power_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"wear_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"overstrain_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"safe\",\n      \"type\": \"State\"\n    },\n    {\n      \"id\": \"caution\",\n      \"type\": \"State\"\n    },\n    {\n      \"id\": \"warning\",\n      \"type\": \"State\"\n    },\n    {\n      \"id\": \"danger\",\n      \"type\": \"State\"\n    }\n  ],\n  \"edges\": [\n    {\n      \"source\": \"thermal_risk\",\n      \"target\": \"safe\",\n      \"probability\": 0.2098\n    },\n    {\n      \"source\": \"thermal_risk\",\n      \"target\": \"caution\",\n      \"probability\": 0.2647\n    },\n    {\n      \"source\": \"thermal_risk\",\n      \"target\": \"warning\",\n      \"probability\": 0.5255\n    },\n    {\n      \"source\": \"low_speed_risk\",\n      \"target\": \"safe\",\n      \"probability\": 0.1632\n    },\n    {\n      \"source\": \"low_speed_risk\",\n      \"target\": \"caution\",\n      \"probability\": 0.2701\n    },\n    {\n      \"source\": \"low_speed_r\n... (truncated)\n\n## Candidate 2: PWF_high\n- alpha_dk: 0.20\n- rrf_score_base: 0.302198\n- neighbor_support: 0.165808\n- rrf_score_dk: 0.274920\n\n{\n  \"mode\": \"PWF_high\",\n  \"nodes\": [\n    {\n      \"id\": \"thermal_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"low_speed_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"low_power_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"high_power_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"wear_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"overstrain_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"safe\",\n      \"type\": \"State\"\n    },\n    {\n      \"id\": \"caution\",\n      \"type\": \"State\"\n    },\n    {\n      \"id\": \"warning\",\n      \"type\": \"State\"\n    },\n    {\n      \"id\": \"danger\",\n      \"type\": \"State\"\n    }\n  ],\n  \"edges\": [\n    {\n      \"source\": \"thermal_risk\",\n      \"target\": \"safe\",\n      \"probability\": 1.0\n    },\n    {\n      \"source\": \"low_speed_risk\",\n      \"target\": \"safe\",\n      \"probability\": 1.0\n    },\n    {\n      \"source\": \"low_power_risk\",\n      \"target\": \"safe\",\n      \"probability\": 1.0\n    },\n    {\n      \"source\": \"high_power_risk\",\n      \"target\": \"safe\",\n      \"probability\": 0.1192\n    },\n    {\n      \"source\": \"high_power_risk\",\n      \"target\": \"caution\",\n      \"probability\": 0.1476\n    },\n    {\n      \"source\": \"high_power_risk\n... (truncated)\n\n## Candidate 3: Normal\n- alpha_dk: 0.20\n- rrf_score_base: 0.340909\n- neighbor_support: 0.000000\n- rrf_score_dk: 0.272727\n\n{\n  \"mode\": \"Normal\",\n  \"nodes\": [\n    {\n      \"id\": \"thermal_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"low_speed_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"low_power_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"high_power_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"wear_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"overstrain_risk\",\n      \"type\": \"Sensor\"\n    },\n    {\n      \"id\": \"safe\",\n      \"type\": \"State\"\n    },\n    {\n      \"id\": \"caution\",\n      \"type\": \"State\"\n    },\n    {\n      \"id\": \"warning\",\n      \"type\": \"State\"\n    },\n    {\n      \"id\": \"danger\",\n      \"type\": \"State\"\n    }\n  ],\n  \"edges\": [\n    {\n      \"source\": \"thermal_risk\",\n      \"target\": \"safe\",\n      \"probability\": 0.906\n    },\n    {\n      \"source\": \"thermal_risk\",\n      \"target\": \"caution\",\n      \"probability\": 0.0927\n    },\n    {\n      \"source\": \"thermal_risk\",\n      \"target\": \"warning\",\n      \"probability\": 0.0013\n    },\n    {\n      \"source\": \"low_speed_risk\",\n      \"target\": \"safe\",\n      \"probability\": 0.9118\n    },\n    {\n      \"source\": \"low_speed_risk\",\n      \"target\": \"caution\",\n      \"probability\": 0.0821\n    },\n    {\n      \"source\": \"low_speed\n... (truncated)\n\n# Supplementary Information\n## Supplementary 1: C:\\Users\\c0852\\Desktop\\workspace\\ExplainableFaultDiagnosis_KGBI_with_LLM\\20260528\\OpenData\\outputs\\ai4i_paper_v5\\ref_graph_gen_ai4i_main_v5__hybrid_0.4\\supplementary\\supplementary_knowledge_ref_graph_gen_ai4i_main_v5__hybrid_0.4_lite.json\n{\n  \"knowledge_base_name\": \"ref_graph_gen_ai4i_main_v5__hybrid_0.4_supplementary_lite\",\n  \"machine_info\": {\n    \"system_name\": \"ref_graph_gen_ai4i_main_v5__hybrid_0.4\",\n    \"description\": \"Compact supplementary knowledge for ref_graph_gen_ai4i_main_v5__hybrid_0.4.\"\n  }\n}",
+  "retrieval_trace": {
+    "strategy_family": "dc_gbrf",
+    "alpha_dk": 0.2,
+    "fused_table_after_dk": [
+      {
+        "mode": "HDF",
+        "rrf_score": 0.3560606060606061,
+        "topk_vote_count": 4,
+        "best_rank": 1,
+        "mean_rank": 1.25,
+        "norm_score_mean": 0.8333333333333334,
+        "supporting_methods": "Cosine|Pearson|Jaccard|Frobenius",
+        "neighbor_support": 0.15908886339476586,
+        "rrf_score_base": 0.3560606060606061,
+        "rrf_score_dk": 0.31666625752743804,
+        "rank_before_rrf": 1,
+        "rank_after_rrf_dk": 1
+      },
+      {
+        "mode": "PWF_high",
+        "rrf_score": 0.30219780219780223,
+        "topk_vote_count": 3,
+        "best_rank": 3,
+        "mean_rank": 3.25,
+        "norm_score_mean": 0.4337655812918811,
+        "supporting_methods": "Cosine|Pearson|Frobenius",
+        "neighbor_support": 0.16580818258753932,
+        "rrf_score_base": 0.30219780219780223,
+        "rrf_score_dk": 0.27491987827574965,
+        "rank_before_rrf": 3,
+        "rank_after_rrf_dk": 2
+      },
+      {
+        "mode": "Normal",
+        "rrf_score": 0.3409090909090909,
+        "topk_vote_count": 4,
+        "best_rank": 1,
+        "mean_rank": 1.75,
+        "norm_score_mean": 0.8844062358780869,
+        "supporting_methods": "Cosine|Pearson|Jaccard|Frobenius",
+        "neighbor_support": 0.0,
+        "rrf_score_base": 0.3409090909090909,
+        "rrf_score_dk": 0.2727272727272727,
+        "rank_before_rrf": 2,
+        "rank_after_rrf_dk": 3
+      },
+      {
+        "mode": "PWF_low",
+        "rrf_score": 0.2912087912087912,
+        "topk_vote_count": 1,
+        "best_rank": 3,
+        "mean_rank": 3.75,
+        "norm_score_mean": 0.403204196791768,
+        "supporting_methods": "Jaccard",
+        "neighbor_support": 0.16936728958052255,
+        "rrf_score_base": 0.2912087912087912,
+        "rrf_score_dk": 0.26684049088313744,
+        "rank_before_rrf": 4,
+        "rank_after_rrf_dk": 4
+      }
+    ]
+  }
+}

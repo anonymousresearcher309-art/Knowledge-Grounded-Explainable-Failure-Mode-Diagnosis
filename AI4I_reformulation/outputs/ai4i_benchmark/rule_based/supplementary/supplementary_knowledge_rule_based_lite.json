@@ -1,0 +1,10 @@
+{
+  "knowledge_base_name": "supplementary_knowledge_rule_based_lite",
+  "machine_info": {
+    "system_name": "rule_based",
+    "description": "Rule-based reference graphs."
+  },
+  "notes": [
+    "Compact placeholder supplementary payload."
+  ]
+}

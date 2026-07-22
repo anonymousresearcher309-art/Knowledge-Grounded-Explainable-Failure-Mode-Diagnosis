@@ -1,0 +1,11 @@
+{
+  "knowledge_base_name": "supplementary_knowledge_hybrid_0.8_full",
+  "machine_info": {
+    "system_name": "hybrid_0.8",
+    "description": "Hybrid reference graphs with alpha 0.8."
+  },
+  "notes": [
+    "This file is a scaffold for later supplementary knowledge construction.",
+    "Populate with curated maintenance and machine-specific documents before vector-store build."
+  ]
+}

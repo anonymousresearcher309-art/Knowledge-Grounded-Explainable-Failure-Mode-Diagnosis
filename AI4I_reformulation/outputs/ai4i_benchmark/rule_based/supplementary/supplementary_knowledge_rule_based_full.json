@@ -1,0 +1,11 @@
+{
+  "knowledge_base_name": "supplementary_knowledge_rule_based_full",
+  "machine_info": {
+    "system_name": "rule_based",
+    "description": "Rule-based reference graphs."
+  },
+  "notes": [
+    "This file is a scaffold for later supplementary knowledge construction.",
+    "Populate with curated maintenance and machine-specific documents before vector-store build."
+  ]
+}
